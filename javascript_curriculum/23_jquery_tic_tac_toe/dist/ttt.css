@@ -1,0 +1,73 @@
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+  font-family: Tahoma;
+}
+
+ul { 
+  display: flex; 
+  width: 300px;
+  flex-wrap: wrap;
+  list-style: none;
+  border: 5px solid black;
+  margin: 30px auto;
+}
+
+li { 
+  border: 5px solid black;
+  width: 90px;
+  height: 90px;
+  background-color: gray;
+}
+
+h1, figcaption { 
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
+}
+
+li:hover { 
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.x::after { 
+  content: "x";
+}
+
+.o::after { 
+  content: "o";
+}
+
+.x::after, .o::after { 
+  font-size: 60px;  
+  padding-left: 25px;
+  display: block;
+  font-weight: 700;
+}
+
+.winner { 
+  background-color: green; 
+  color: white; 
+}
+
+.reg-cell { 
+  background-color: white;
+}
+
+.game-over { 
+  background-color: white; 
+  color: red;
+}
+
+.disabled { 
+  pointer-events: none;
+}
+
+.disabled:hover { 
+  pointer-events: none; 
+  cursor: none;
+}

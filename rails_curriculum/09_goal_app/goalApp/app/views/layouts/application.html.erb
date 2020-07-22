@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoalApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <h1>Goal App</h1>
+    <% if flash[:notices] %>
+      <% flash[:notices].each do |msg| %>
+        <p><b><%= msg %></b></p>
+      <% end %>
+    <% end %>
+    <% if logged_in? %>
+      Welcome <%=current_user.username %><br><br>
+      <%= button_to "Sign out", session_url, method: :delete, class: 'sign-out-button' %>
+    <% else %> 
+      <%= link_to "Sign up", new_user_url %>
+      <%= link_to "Sign in", new_session_url %>
+    <% end %>
+    <main>
+    <%= yield %>
+    </main>
+  </body>
+</html>

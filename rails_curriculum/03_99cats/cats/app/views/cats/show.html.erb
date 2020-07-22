@@ -1,0 +1,28 @@
+<table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Birthday</th>
+      <th>Color</th>
+      <th>Description</th>
+    </tr>
+      <td><%= @cat.name %></td>
+      <td><%= @cat.age %></td>
+      <td><%= @cat.sex %></td>
+      <td><%= @cat.birth_date %></td>
+      <td><%= @cat.color %></td>
+      <td><%= @cat.description %></td>
+</table>
+
+<h1>Existing rental requests</h1>
+<ul>
+<% ordered_cats = @cat.rental_requests.order(:start_date) %>
+<% ordered_cats.each do |request| %>
+  <li>Start Date: <%= request.start_date %>, End Date: <%= request.end_date %></li>
+  <% if request.pending? %>
+    <%= button_to "Approve", approve_cat_rental_request_url(request), method: 'patch' %>
+    <%= button_to "Deny", deny_cat_rental_request_url(request), method: 'patch' %>
+  <% end %>
+<% end %>
+</ul>

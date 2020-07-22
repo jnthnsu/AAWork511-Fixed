@@ -1,0 +1,66 @@
+html, body, ul, li, figure, h1 { 
+  margin: 0 ; 
+  padding: 0; 
+  font: inherit; 
+  border: 0; 
+  font-family: Tahoma;
+  text-align: inherit;
+}
+
+.tower { 
+  width: 200px;
+  margin-left: 50px;
+}
+
+.hanoi { 
+  display: flex;
+  margin: 300px 0 0 300px;
+}
+
+.tower:hover { 
+  border-color: blue;
+  cursor: pointer;
+}
+
+ul .selected { 
+  border-color: green;
+}
+
+h1 { 
+  text-align: center;
+  margin-top: 20px;
+  font-size: 50px;
+}
+
+ul { 
+  list-style: none;
+  border-bottom: 10px solid black; 
+}
+
+li { 
+  border: 5px solid black;
+  margin: 15px;
+  background-color: red;
+  border-style: none;
+}
+
+.disc-0 { 
+  margin: 5px auto;
+  border-radius: 50px;
+  height: 30px;
+  width: 40%;
+}
+
+.disc-1 { 
+  margin: 5px auto;;
+  border-radius: 50px;
+  height: 30px;
+  width: 60%;
+}
+
+.disc-2 {
+  margin: 5px auto;
+  width: 80%;
+  border-radius: 50px;
+  height: 30px
+}
